@@ -9,9 +9,10 @@ const constraints = window.constraints = {
 
 const video = document.querySelector('gum');
 const canvas = window.canvas = document.querySelector('canvas');
-canvas.width = 480;
-canvas.height = 360;
-
+//canvas.width = 480;
+//canvas.height = 360;
+canvas.width = 1280;
+canvas.height = 720;
 
 const mediaSource = new MediaSource();
 mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
@@ -33,36 +34,50 @@ recordButton.addEventListener('click', () => {
   }
 });
 
-const fotoButton = document.querySelector('button#foto');
-fotoButton.onclick = function() {
-  canvas.width = gum.videoWidth;
-  canvas.height = gum.videoHeight;
-  canvas.getContext('2d').drawImage(gum, 0, 0, canvas.width, canvas.height);
- 
-  
 
-var $canvas = document.getElementById('canvas');
 
-var foto = $canvas.toDataURL();
-$estado.innerHTML = "Enviando imagen. Por favor, espera...";
-     var xhr = new XMLHttpRequest();
-        xhr.open("POST", "./php/descargar_imagen.php", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send(encodeURIComponent(foto)); //Codificar y enviar
-
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                console.log("La imagen fue enviada correctamente");
-                console.log(xhr);
-                $estado.innerHTML = "Imagen guardada con éxito.";
-            }
-        }
+        
         
 
-};
+
 
 
 const foto = document.querySelector('canvas');
+
+function guardarImagen() {
+  canvas.width = gum.videoWidth;
+          canvas.height = gum.videoHeight;
+          canvas.getContext('2d').drawImage(gum, 0, 0, canvas.width, canvas.height);
+         
+          
+        
+        var $canvas = document.getElementById('canvas');
+        
+        var foto = $canvas.toDataURL();
+        $estado.innerHTML = "Enviando imagen. Por favor, espera...";
+             var xhr = new XMLHttpRequest();
+                xhr.open("POST", "./php/descargar_imagen.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send(encodeURIComponent(foto)); //Codificar y enviar
+        
+                xhr.onreadystatechange = function() {
+                    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                        console.log("La imagen fue enviada correctamente");
+                        console.log(xhr);
+                        $estado.innerHTML = "Imagen guardada con éxito.";
+                    }
+                }
+}
+document.getElementById("foto").onclick = function() {guardarImagen()};
+
+window.addEventListener('keydown', tomarImagen);
+    function tomarImagen(event){
+       if(event.keyCode == '37'|| event.keyCode == '39'){//Tecla con la flecha hacia la izquierda	 o derecha	
+          console.log('Tu codigo funciona correctamente');
+          guardarImagen();
+       }
+       
+    }
 
 
 const downloadButton = document.querySelector('button#download');
@@ -113,7 +128,7 @@ downloadButton.addEventListener('click', () => {
     }
 
   
-
+    
 
 
 

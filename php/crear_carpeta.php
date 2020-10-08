@@ -16,7 +16,7 @@
             die();
         }else{
             mkdir("C:/Estudios/".$cedula, 0777);
-            echo "se creo carpeta para paciente con exito".date("d/m/Y");
+            echo "se creo carpeta para paciente con exito";
 
 
             
