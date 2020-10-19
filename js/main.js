@@ -8,10 +8,10 @@ const constraints = (window.constraints = {
 
 const video = document.querySelector("gum");
 const canvas = (window.canvas = document.querySelector("canvas"));
-//canvas.width = 480;
-//canvas.height = 360;
-canvas.width = 1280;
-canvas.height = 720;
+canvas.width = 480;
+canvas.height = 360;
+//canvas.width = 1280;
+//canvas.height = 720;
 
 const mediaSource = new MediaSource();
 mediaSource.addEventListener("sourceopen", handleSourceOpen, false);
