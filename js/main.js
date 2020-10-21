@@ -63,7 +63,7 @@ document.getElementById("foto").onclick = function () {
 
 window.addEventListener("keydown", tomarImagen);
 function tomarImagen(event) {
-  if (event.keyCode == "37" || event.keyCode == "39") {
+  if (event.keyCode == "33" || event.keyCode == "34") {
     //Tecla con la flecha hacia la izquierda	 o derecha
     console.log("Tu codigo funciona correctamente");
     guardarImagen();
@@ -115,7 +115,7 @@ downloadButton.addEventListener("click", () => {
 function handleSourceOpen(event) {
   console.log("MediaSource abierto");
   sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
-  console.log("Source buffer: ", sourceBuffer);
+  console.log("Búfer de origen: ", sourceBuffer);
 }
 
 function handleDataAvailable(event) {
@@ -163,15 +163,15 @@ function startRecording() {
 
 function stopRecording() {
   mediaRecorder.stop();
-  console.log("Recorded Blobs: ", recordedBlobs);
+  console.log("Blobs grabados: ", recordedBlobs);
 }
 
 function handleSuccess(stream) {
   const video = document.querySelector("video");
   const videoTracks = stream.getVideoTracks();
   recordButton.disabled = false;
-  console.log("Got stream with constraints:", constraints);
-  console.log(`Using video device: ${videoTracks[0].label}`);
+  console.log("Obtuve stream con restricciones:", constraints);
+  console.log(`Usando dispositivo: ${videoTracks[0].label}`);
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
 }
@@ -184,9 +184,9 @@ function handleError(error) {
     );
   } else if (error.name === "PermissionDeniedError") {
     errorMsg(
-      "Permissions have not been granted to use your camera and " +
-        "microphone, you need to allow the page access to your devices in " +
-        "order for the demo to work."
+      "No se han otorgado permisos para usar su cámara y " +
+        "micrófono, debe permitir que la página acceda a sus dispositivos en " +
+        "orden para que funcione la demostración."
     );
   }
   errorMsg(`getUserMedia error: ${error.name}`, error);
