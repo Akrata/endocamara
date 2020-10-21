@@ -54,6 +54,9 @@ function guardarImagen() {
       console.log("La imagen fue enviada correctamente");
       console.log(xhr);
       $estado.innerHTML = "Imagen guardada con éxito.";
+      setTimeout(function () {
+        $estado.innerHTML = "";
+      }, 1000);
     }
   };
 }
@@ -63,7 +66,8 @@ document.getElementById("foto").onclick = function () {
 
 window.addEventListener("keydown", tomarImagen);
 function tomarImagen(event) {
-  if (event.keyCode == "33" || event.keyCode == "34") {
+  if (event.keyCode == "66") {
+    //|| event.keyCode == "34")
     //Tecla con la flecha hacia la izquierda	 o derecha
     console.log("Tu codigo funciona correctamente");
     guardarImagen();

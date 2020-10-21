@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -38,14 +39,16 @@
 
 
 
-    <video id="gum" playsinline autoplay muted controls></video>
+    <video id="gum" playsinline autoplay muted controls width="75%"></video>
 
     <canvas id="canvas" style="display: none;"></canvas>
 
     <div>
-      <button class="button is-link" id="record" disabled>Grabar Video</button>
+
       <button class="button is-link" id="foto">Tomar Imagen</button>
+      <button class="button is-link" id="record" disabled>Grabar Video</button>
       <button class="button is-link" id="download" disabled>Descargar Video</button>
+
     </div>
     <p id="estado"></p>
     <div id="fotos2"></div>
