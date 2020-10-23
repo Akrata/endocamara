@@ -39,7 +39,7 @@
 
 
 
-    <video id="gum" playsinline autoplay muted controls width="65%"></video>
+    <video id="gum" playsinline autoplay muted controls ></video>
 
     <canvas id="canvas" style="display: none;"></canvas>
 
