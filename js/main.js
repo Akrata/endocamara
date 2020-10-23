@@ -41,7 +41,8 @@ function guardarImagen() {
   canvas.getContext("2d").drawImage(gum, 0, 0, canvas.width, canvas.height);
 
   var $canvas = document.getElementById("canvas");
-
+  var miAudio=document.getElementById("miAudio");
+  
   var foto = $canvas.toDataURL();
   $estado.innerHTML = "Enviando imagen. Por favor, espera...";
   var xhr = new XMLHttpRequest();
@@ -54,11 +55,13 @@ function guardarImagen() {
       console.log("La imagen fue enviada correctamente");
       console.log(xhr);
       $estado.innerHTML = "Imagen guardada con éxito.";
+      miAudio.play();
       setTimeout(function () {
         $estado.innerHTML = "";
       }, 1000);
     }
   };
+  
 }
 document.getElementById("foto").onclick = function () {
   guardarImagen();

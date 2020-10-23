@@ -26,9 +26,9 @@
   session_start();
   ?>
 
-  <section class="hero is-link" style="height: 125px;">
+  <section class="hero is-link" style="height: 85px;">
     <div class="hero-body">
-      <div class="container has-text-centered" style="margin-top: -25px;">
+      <div class="container has-text-centered" style="margin-top: -45px;">
         <h1 class="title "><img src="img/LogoCRAMI.png ">
           Crami Endoscopia
         </h1>
@@ -54,17 +54,11 @@
 
     </form>
 
-
-
-
-
-
-
   </div>
-  <footer class="footer is-small">
-    <div class="content has-text-centered" ">
+  <footer class="footer">
+    <div class="content has-text-right" ">
     <p style=" font-size: 10px;">
-      <strong>-Endoscopia Web-</strong> Creado en HTML, CSS, JS y PHP - Pablo Feijó.
+      <strong>-Endoscopia Web-</strong> Pablo Feijó.
       </p>
     </div>
   </footer>
